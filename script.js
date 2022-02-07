@@ -19,6 +19,10 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".message").style.animationDuration = "2s";
 
     // When player wins
+  } else if (guess > 20) {
+    displayMessage("⚠ Enter Between 1 and 20");
+    document.querySelector(".message").style.animation = "shakeX";
+    document.querySelector(".message").style.animationDuration = "2s";
   } else if (guess === secretNumber) {
     displayMessage("🎉 Correct Number!");
     document.querySelector(".number").textContent = secretNumber;
@@ -65,6 +69,7 @@ document.querySelector(".again").addEventListener("click", function () {
 
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".number").style.width = "15rem";
+  document.querySelector(".message").style.animation = "";
 });
 
 ///////////////////////////////////////
